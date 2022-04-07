@@ -15,9 +15,8 @@
         .cell-1 {
             border-collapse: separate;
             border-spacing: 0 4em;
-            background: #fff;
             border-bottom: 5px solid transparent;
-            background-clip: padding-box
+            background-clip: padding-box;
         }
         thead {
             background: #dddcdc
@@ -46,17 +45,31 @@
                         </thead>
                         {% for object in objects %}
                         <tbody class="table-body">
-                            <tr class="cell-1">
-                                <td class="text-center">{{forloop.counter}}</td>
-                                {% if forloop.counter == 1 %}
-                                <a background: #FFD700>
-                                {% else if forloop.counter == 2 %}
-                                <a background: #C0C0C0>
-                                {% else if forloop.counter == 3 %}
-                                <a background: #B87333>
-                                <td>{{object.name}}</td>
-                                <td>{{object.points}}</td>
-                            </tr>
+                            {% if forloop.counter == 1 %}
+                                <tr class="cell-1", bgcolor="#FFFF00">
+                                    <td class="text-center">{{forloop.counter}}</td>
+                                    <td>{{object.name}}</td>
+                                    <td>{{object.points}}</td>
+                                </tr>
+                            {% elif forloop.counter == 2 %}
+                                <tr class="cell-1", bgcolor="#C0C0C0">
+                                    <td class="text-center">{{forloop.counter}}</td>
+                                    <td>{{object.name}}</td>
+                                    <td>{{object.points}}</td>
+                                </tr>
+                            {% elif forloop.counter == 3 %}
+                                <tr class="cell-1", bgcolor="#CD7F32">
+                                    <td class="text-center">{{forloop.counter}}</td>
+                                    <td>{{object.name}}</td>
+                                    <td>{{object.points}}</td>
+                                </tr>
+                            {% else %}
+                                <tr class="cell-1", bgcolor="#FFFFFF">
+                                    <td class="text-center">{{forloop.counter}}</td>
+                                    <td>{{object.name}}</td>
+                                    <td>{{object.points}}</td>
+                                </tr>
+                            {% endif %}
                         {% endfor %}
                         </tbody>
                     </thead>
