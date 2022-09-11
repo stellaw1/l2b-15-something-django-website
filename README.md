@@ -9,6 +9,10 @@ URL: [http://server.yslalan.xyz:8888/](http://server.yslalan.xyz:8888/)
 # Setup
 
 ### Install
+```
 python3 -m pip install -r requirements.txt
+```
 ### Run server
+```
 python3 manage.py runserver 0.0.0.0:port
+```
